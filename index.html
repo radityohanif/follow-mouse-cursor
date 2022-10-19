@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="objek">How To | Follow Mouse Cursor</h2>
+    <div id="cursor"></div>
+    <div id="keterangan">
+        <b>Keterangan :</b>
+        <br> 
+        Lorem ipsum dolor sit amet consectetur
+    </div>
+    <script>
+        var cursor = document.getElementById('cursor');
+        var objek = document.getElementById('objek');
+        var keterangan = document.getElementById('keterangan');
+        document.addEventListener('mousemove', function(e){
+            var x = e.clientX;
+            var y = e.clientY;
+            cursor.style.left = x + "px";
+            cursor.style.top = y + "px";
+        });
+
+        objek.addEventListener('mouseover', function(e){
+            keterangan.style.transform = "scale(1)";
+        });
+
+        objek.addEventListener('mouseleave', function(e){
+            keterangan.style.transform = "scale(0)";
+        });
+        
+        objek.addEventListener('mousemove', function(e){
+            keterangan.style.left = e.clientX + "px";
+            keterangan.style.top = e.clientY + "px";
+        });
+        
+        keterangan.addEventListener('mouseover', function(e){
+            keterangan.style.transform = "scale(1)";
+        });
+
+        keterangan.addEventListener('mousemove', function(e){
+                keterangan.style.left = e.clientX + "px";
+                keterangan.style.top = e.clientY + "px";
+        });
+        
+    </script>
+</body>
+</html>
